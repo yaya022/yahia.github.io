@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  grid-area: header;
+  justify-content: center;
+}
+
+.sidebar1 {
+  grid-area: sidebar1;
+  font-family: tahoma sans-serif;
+  font-size: 16px;
+}
+
+.sidebar2 {
+  grid-area: sidebar2;
+  font-family: tahoma sans-serif;
+  font-size: 16px;
+}
+
+.content {
+  grid-area: content;
+  font-size: 20px;
+}
+
+img {
+  margin: 0.5em;
+  flex: 1;
+  flex-grow: 1;
+  position: relative;
+  width: 95%;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/*  === phone view FIRST === */
+section.parent {
+  background-color: #fff;
+  color: #444;
+  width: 100%;
+  /* min-height: 70vh;
+  height: auto; */
+  /* height: 70vh; */
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header"
+    "content"
+    "sidebar1"
+    "sidebar2"
+    "footer";
+  padding: 20px;
+}
+
+.box {
+  background:#eee;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+  section.parent {
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas:
+      "header header"
+      "sidebar1 content"
+      "sidebar2 sidebar2"
+      "footer footer";
+  }
+}
+
+/* ===================================== */
+/* === DESKTOP VIEW 980PX AND LARGER ===*/
+/* ===================================== */
+@media only screen and (min-width: 980px) {
+  section.parent {
+    grid-template-columns: 1fr 5fr 1.5fr;
+    grid-template-areas:
+      "header header sidebar1"
+      "content content sidebar1"
+      "sidebar2 sidebar2 sidebar1"
+      "footer footer sidebar1";
+  }
+}
+
+nav {
+  background: #333;
+  display: flex;
+  margin-bottom: 0.3rem;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  margin-bottom: 5px;
+}
+
+nav a:link {
+  color: #fff;
+  padding: 1rem;
+  background: #333;
+  text-decoration: none;
+  flex-grow: 1;
+  text-align: center;
+  transition: all .3s;
+  text-transform: capitalize;
+}
+
+nav a:visited {
+  color: #eee;
+}
+
+nav a:hover {
+  color: #333;
+  background: #fff;
+}
