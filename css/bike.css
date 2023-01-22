@@ -34,8 +34,15 @@ img {
   width: 95%;
 }
 
-.footer {
-  grid-area: footer;
+footer {
+  background-color: #010103;
+  color: #fff;
+  padding: 0.5em;
+  border-top: #eee solid 10px;
+  text-align: center;
+  font-family: georgia, times, serif;
+  font-style: normal;
+  text-transform: capitalize;
 }
 
 /*  === phone view FIRST === */
